@@ -9,6 +9,9 @@ Tunnel.bindInterface("vicerp_timedReward_helpers", helper)
 
 function helper.getPlayedTime(user_id)
   local userData = vRP.query("vRP/vicerp_timedReward/get_user_data",{ user_id = user_id })
+  print('dados')
+  print(userData[1])
+  
   if userData then
     local totalPlayedTime = userData[1].played_time
     local last_login = userData[1].last_login

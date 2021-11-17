@@ -45,6 +45,7 @@ const App = () => {
         fetchNui('getData').then(data => {
             setCurStep(data.rewardStatus)
             setPrize(data.prize)
+            console.log('vocês está no status', data.rewardStatus)
             if (data.prize > 0) {
 
                 setStep(data.rewardStatus - 1)
@@ -68,6 +69,7 @@ const App = () => {
 
     const handleGetRewards = () => {
         fetchNui('getRewards').then(data => {
+            console.log(data)
             setShow(true)
             setStep(curStep)
         })
