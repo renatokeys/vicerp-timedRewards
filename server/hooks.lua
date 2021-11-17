@@ -6,7 +6,7 @@ vRP = Proxy.getInterface("vRP")
 AddEventHandler('playerSpawned', function() -- user hoin
   local source = source
   local playerId = vRP.getUserId({source})
-  vRP.execute("vRP/vicerp_timedReward/update_last_login", {user_id = playerId, last_login = os.time()})
+  vRP.execute("vRP/vicerp_timedReward/update_user_last_login", {user_id = playerId, last_login = os.time()})
 end)
 
 
@@ -19,6 +19,6 @@ AddEventHandler('playerDropped', function() -- user logoff
     local played_time = userData[1].played_time
     played_time = played_time + ((now - userData[1].last_login) / 60 / 60)
     vRP.execute("vRP/vicerp_timedReward/update_played_time",{ user_id = playerId, played_time = played_time })
-    vRP.execute("vRP/vicerp_timedReward/update_last_logoff", { user_id = playerId , last_logoff = now })
+    vRP.execute("vRP/vicerp_timedReward/update_user_last_logoff", { user_id = playerId , last_logoff = now })
   end
 end)

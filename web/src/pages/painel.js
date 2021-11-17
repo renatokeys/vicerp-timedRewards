@@ -45,6 +45,7 @@ const App = () => {
         fetchNui('getData').then(data => {
             setCurStep(data.rewardStatus)
             setPrize(data.prize)
+            console.log('vocês está no status', data.rewardStatus)
             if (data.prize > 0) {
 
                 setStep(data.rewardStatus - 1)
@@ -68,6 +69,7 @@ const App = () => {
 
     const handleGetRewards = () => {
         fetchNui('getRewards').then(data => {
+            console.log(data)
             setShow(true)
             setStep(curStep)
         })
@@ -87,7 +89,7 @@ const App = () => {
                         <Flex p={8}>
                             <Center flexDirection='column' w='30%' h='100%'>
                                 <Center>
-                                    <Image src='/timed/chest.png' w='200px' alt='' />
+                                    <Image src='https://casa-do-artesanato.s3.sa-east-1.amazonaws.com/next-s3-uploads/a93fa394-d6bb-4c0d-b5c8-698810129285/chest.png' w='200px' alt='' />
                                 </Center>
                                 <Button colorScheme='teal' onClick={handleGetRewards}>Receba sua Recompensa</Button>
                             </Center>
