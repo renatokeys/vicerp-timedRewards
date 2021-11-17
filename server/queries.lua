@@ -7,7 +7,7 @@ vRP = Proxy.getInterface("vRP")
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
-vRP.prepare("vRP/vicerp_timedReward/get_user_coins", "SELECT moedas FROM vrp_users WHERE id=@user_id")
+vRP.prepare("vRP/vicerp_timedReward/get_user_coins", "SELECT * FROM vrp_users WHERE id = @user_id")
 vRP.prepare('vRP/vicerp_timedReward/insert_user', "INSERT INTO vicerp_timedReward (user_id, last_login, last_logoff, played_time, reward_state) VALUES (@user_id, 0, 0, 0, 0)")
 vRP.prepare("vRP/vicerp_timedReward/reset","UPDATE vicerp_timedReward SET last_login = now(), played_time = 0")
 vRP.prepare("vRP/vicerp_timedReward/get_user_data","SELECT * FROM vicerp_timedReward WHERE user_id = @user_id")
