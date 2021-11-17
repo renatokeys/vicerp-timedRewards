@@ -27,7 +27,8 @@ function helper.getPlayedTime(user_id)
       -- loop config.rewards and check if config.rewards[i][1] <= totalPlayedTime and config.rewards[i][2] > totalPlayedTime
       for k, v in pairs(config.rewards) do
         print(v[k])
-        if v[k][1] <= totalPlayedTime and v[k][1] > totalPlayedTime then
+        print(totalPlayedTime)
+        if v[k] <= totalPlayedTime and v[k] > totalPlayedTime then
           prize = v[k][2]
           rewardStatus = v[k]
           break
