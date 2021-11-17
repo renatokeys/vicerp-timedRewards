@@ -8,8 +8,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `vicerp_timedReward`;
 CREATE TABLE `vicerp_timedReward`  (
   `id` int NOT NULL,
-  `last_login` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `last_logoff` datetime NULL DEFAULT NULL,
+  `last_login` bigint(20),
+  `last_logoff` bigint(20),
   `played_time` int NOT NULL DEFAULT 0,
   `reward_state` int NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE,

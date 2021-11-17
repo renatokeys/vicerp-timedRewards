@@ -17,7 +17,7 @@ function helper.getPlayedTime(user_id)
     if last_login > last_logoff then
       local now = os.time()
       local diff = now - last_login
-      totalPlayedTime = totalPlayedTime + (diff * 60 * 60)
+      totalPlayedTime = totalPlayedTime + (diff / 60 / 60)
       vRP.execute("vRP/vicerp_timedReward/update_last_login",{ user_id = user_id, last_login = now })
       vRP.execute("vRP/vicerp_timedReward/update_last_logoff",{ user_id = user_id, last_logoff = (now-1) })
       vRP.execute("vRP/vicerp_timedReward/update_played_time",{ user_id = user_id, played_time = totalPlayedTime })
