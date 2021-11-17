@@ -26,9 +26,9 @@ function helper.getPlayedTime(user_id)
       local prize = 0
       -- loop config.rewards and check if config.rewards[i][1] <= totalPlayedTime and config.rewards[i][2] > totalPlayedTime
       for k, v in pairs(config.rewards) do
-        if v[k][1] <= totalPlayedTime and v[k+1][1] > totalPlayedTime then
-          prize = v[k][2]
-          rewardStatus = v[k]
+        if k[v][1] <= totalPlayedTime and k[v+1][1] > totalPlayedTime then
+          prize = k[v][2]
+          rewardStatus = k[v]
           break
         end
       end
