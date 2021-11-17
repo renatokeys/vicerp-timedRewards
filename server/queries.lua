@@ -6,21 +6,25 @@ vRP = Proxy.getInterface("vRP")
 -- PREPARE
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-vRP.prepare("vRP/vicerp_timedReward/createDB", [[
-CREATE TABLE IF NOT EXISTS vicerp_timedReward (
-  id INTEGER NOT NULL PRIMARY KEY,
-  last_login BIGINT(20) NOT NULL DEFAULT 0,
-  last_logoff BIGINT(20) NOT NULL DEFAULT 0,
-  played_time INT NOT NULL DEFAULT 0,
-  reward_state INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (id)
-)
-]])  
-)
+Citizen.CreateThread(function()
+    vRP._prepare("vRP/vicerp_timedReward/createDB", [[
+      CREATE TABLE IF NOT EXISTS vicerp_timedReward (
+        id INTEGER NOT NULL PRIMARY KEY,
+        last_login BIGINT(20) NOT NULL DEFAULT 0,
+        last_logoff BIGINT(20) NOT NULL DEFAULT 0,
+        played_time INT NOT NULL DEFAULT 0,
+        reward_state INT NOT NULL DEFAULT 0,
+        PRIMARY KEY (id)
+      )
+      ]])  
+      vRP.execute("vRP/vicerp_timedReward/createDB")
+end)
+
+
 
 
 vRP.prepare("vRP/vicerp_timedReward/get_user_coins", "SELECT coins FROM vrp_users WHERE id=@id")
-vRP.execute("vRP/vicerp_timedReward/createDB")
+
 vRP.prepare('vRP/vicerp_timedReward/insert_user', "INSERT INTO vicerp_timedReward (id, last_login, last_logoff, played_time, reward_state) VALUES (@id, 0, 0, 0, 0)")
 vRP.prepare("vRP/vicerp_timedReward/reset","UPDATE vicerp_timedReward SET last_login = now(), played_time = 0")
 vRP.prepare("vRP/vicerp_timedReward/get_user_data","SELECT * FROM vicerp_timedReward WHERE id = @id")
