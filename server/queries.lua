@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS vicerp_timedReward (
   PRIMARY KEY (id)
 )
 ]])  
-)
 
 
 vRP.prepare("vRP/vicerp_timedReward/get_user_coins", "SELECT coins FROM vrp_users WHERE id=@id")
