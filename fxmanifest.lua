@@ -14,9 +14,17 @@ games {
 
 ui_page 'web/build/index.html'
 
-client_script "client/**/*"
-server_script "server/**/*"
 
+client_script {
+  "@vrp/lib/utils.lua",
+  "utils/**/*",
+  "client/**/*"
+}
+server_script {
+  "@vrp/lib/utils.lua",
+  "utils/**/*",
+  "server/**/*"
+}
 files {
   'web/build/index.html',
   'web/build/**/*'

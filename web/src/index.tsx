@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './pages/painel';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
 
+
+const theme = extendTheme({
+  components: {
+    Steps,
+  },
+});
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
   </React.StrictMode>,

@@ -4139,6 +4139,11 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
+chakra-ui-steps@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/chakra-ui-steps/-/chakra-ui-steps-1.5.0.tgz#a8c2931eeed0368102bd6759569142a3b2bdab0d"
+  integrity sha512-j0Tcbpx+q6J/ScFXvXJ2pxopKAJdrjLEi9w64nzwEFTSvQ19mqWIQJVlEct1rXxtHQmyqQBw5hRANaj32SZthQ==
+
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -10189,6 +10194,11 @@ react-focus-lock@2.5.0:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
 react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
