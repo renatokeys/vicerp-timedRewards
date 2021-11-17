@@ -16,3 +16,10 @@ function API.getData()
   return rewardStatus, prize
 end
 
+
+function API.getCoins()
+  local source = source
+  local user_id = vRP.getUserId(source)
+  local coins = vRP.query("vRP/vicerp_timedReward/get_user_coins",{id = user_id})
+  return coins
+end

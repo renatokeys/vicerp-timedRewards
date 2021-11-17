@@ -25,6 +25,7 @@ debugData([
 ])
 
 const App = () => {
+    const [coins, setCoins] = useState(0);
     const [prize, setPrize] = useState(0);
     const [curStep, setCurStep] = useState(0);
     const { nextStep, prevStep, setStep, reset, activeStep } = useSteps({
@@ -54,8 +55,15 @@ const App = () => {
         })
     }
 
+    const getCoins = () => {
+        fetchNui('getCoins').then(data => {
+            setCoins(data)
+        }
+        )
+    }
     useEffect(() => {
         getData()
+        getCoins()
     }, [isVisible])
 
     const handleGetRewards = () => {
@@ -72,7 +80,7 @@ const App = () => {
                         <Flex justifyContent='flex-end' px={8} pt={8}>
                             <Flex flexDirection='column'>
                                 <Text textTransform='uppercase' alignSelf='start' color='white' fontWeight='700'>Suas Coins</Text>
-                                <Text align='center' fontWeight={900} color='green.500'>2.573</Text>
+                                <Text align='center' fontWeight={900} color='green.500'>{coins}</Text>
                             </Flex>
                         </Flex>
 

@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS vicerp_timedReward (
 )
 ]])  
 )
+
+
+vRP.prepare("vRP/vicerp_timedReward/get_user_coins", "SELECT coins FROM vrp_users WHERE id=@id")
 vRP.execute("vRP/vicerp_timedReward/createDB")
 vRP.prepare('vRP/vicerp_timedReward/insert_user', "INSERT INTO vicerp_timedReward (id, last_login, last_logoff, played_time, reward_state) VALUES (@id, 0, 0, 0, 0)")
 vRP.prepare("vRP/vicerp_timedReward/reset","UPDATE vicerp_timedReward SET last_login = now(), played_time = 0")

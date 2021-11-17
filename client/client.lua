@@ -38,6 +38,11 @@ RegisterNUICallback('getRewards', function(_, cb)
 end)
 -- cron reset table everydat at 6 am
 
+RegisterNUICallback('getCoins', function(_, cb)
+  local coins = API.getCoins()
+  cb({coins})
+end)
+
 Citizen.CreateThread(function()
   while true do
     Citizen.Wait(0)
