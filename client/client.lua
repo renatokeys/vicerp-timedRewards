@@ -29,7 +29,7 @@ end)
 
 RegisterNUICallback('getData', function(_, cb)
   local rewardStatus, prize = API.getData()
-  cb({rewardStatus, prize})
+  cb(rewardStatus, prize)
 end)
 
 RegisterNUICallback('getRewards', function(_, cb)
@@ -39,8 +39,8 @@ end)
 -- cron reset table everydat at 6 am
 
 RegisterNUICallback('getCoins', function(_, cb)
-  local coins = API.getCoins()
-  cb({coins})
+  local moedas = API.getCoins()
+  cb(moedas)
 end)
 
 Citizen.CreateThread(function()
